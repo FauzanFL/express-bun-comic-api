@@ -1,7 +1,14 @@
 {
   "name": "comic-api",
-  "module": "index.ts",
+  "module": "server.ts",
   "type": "module",
+  "prisma": {
+    "seed": "node scripts/seed.js"
+  },
+  "scripts": {
+    "dev": "bun run --watch server.ts",
+    "seed": "bunx prisma db seed"
+  },
   "devDependencies": {
     "@types/bun": "latest",
     "@types/express": "^4.17.21",

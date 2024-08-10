@@ -12,3 +12,20 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+enum Status {
+  ongoing
+  complete
+}
+
+model Comic {
+  id Int @id @default(autoincrement())
+  title String @db.VarChar(255)
+  author String @db.VarChar(100)
+  synopsys String?
+  genre String @db.VarChar(255)
+  release DateTime
+  status Status
+
+  @@map("comics")
+}

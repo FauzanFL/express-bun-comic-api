@@ -84,7 +84,7 @@ export const createComic = async (req: express.Request, res: express.Response) =
                 status
             }
         });
-        res.status(201).send({data: comic});
+        res.status(201).send({data: { message: "Comic created successfully" }});
     }catch(e) {
         console.log(e)
         res.status(500).send({errors: { message: "Internal Server Error"}})
@@ -118,7 +118,7 @@ export const updateComic = async (req: express.Request, res: express.Response) =
                 status
             }
         });
-        res.status(200).send({data: comic});
+        res.status(200).send({data: {message: "Comic updated successfully"}});
     }catch(e) {
         console.log(e)
         res.status(500).send({errors: { message: "Internal Server Error"}})
@@ -139,7 +139,7 @@ export const deleteComic = async (req: express.Request, res: express.Response) =
                 id: idInt
             }
         });
-        res.status(200).send({data: comic});
+        res.status(200).send({data: {message: "Comic deleted successfully"}});
     }catch(e) {
         console.log(e)
         res.status(500).send({errors: { message: "Internal Server Error"}})
